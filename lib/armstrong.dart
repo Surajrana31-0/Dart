@@ -21,8 +21,8 @@ String isArmstrongNum(int num1){
   
     }
     if (sum==num1){
-      return'the number is armstrong : $sum ';
+      return'the number is armstrong :  i.e$sum ';
     } else {
-      return 'the number is not armstrong :$sum';
+      return 'the number is not armstrong :  i.e$sum';
     }
 }
