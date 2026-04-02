@@ -19,7 +19,7 @@ bool isPalindrome(int num){
   while(num>0){
     int digit = num%10;
     reversedNum = reversedNum*10+digit;
-    num = num ~/10;  // ~ yo integer value matrai linxha
+    num = num ~/10;  // ~ yo integer value matrai linxha so to remove last digit
   }
   return originalNum == reversedNum;
 
