@@ -38,7 +38,7 @@ void main(){
 
     case '/':
       if (secondNum == 0) {
-        errorMessage = 'Error: Division by zero is not allowed!';
+        errorMessage = 'not allowed!';
       } else {
         result = firstNum / secondNum;
       }
@@ -47,7 +47,7 @@ void main(){
 
     case '%':
       if (secondNum == 0) {
-        errorMessage = 'Error: Modulus by zero is not allowed!';
+        errorMessage = 'Modulus by zero is not allowed';
       } else {
         result = firstNum % secondNum;
       }
