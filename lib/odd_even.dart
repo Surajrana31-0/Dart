@@ -61,7 +61,7 @@ void oddEvenCheck(List<int> oddEvenArr){ //this must be void  to return the valu
 }
 
 
-//2.
+//2. record
 ({int odd, int even,int sumOfEven,int sumOfOdd}) calculateOddEvenlai(List<int> oddEvenArr){
   int even=0;
   int odd=0;
