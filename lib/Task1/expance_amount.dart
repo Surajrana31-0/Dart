@@ -12,7 +12,7 @@ void main(){
   }
 
   int totalExpense = expenceSum(amount);
-  print("Total Expenses:${totalExpense}");
+  print("Total Expenses:$totalExpense");
 }
 
 int expenceSum(List<int> amount){
