@@ -8,7 +8,7 @@ abstract class Shape{
   }
 
   bool isLargerThan(Shape other){
-    return calculateArea()>calculatePerimeter();
+    return calculateArea()> other.calculateArea();
   }
 }
 
@@ -33,8 +33,8 @@ class Circle implements Shape{
    
      @override
      void printShape() {
-      print("${calculateArea()}");
-      print("${calculatePerimeter()}");
+      print("Area: ${calculateArea()}");
+      print("Perimeter: ${calculatePerimeter()}");
      }
 
 
@@ -60,28 +60,27 @@ class Circle implements Shape{
 
 class Rectangle implements Shape{
   final double length;
-  final double bredth;
+  final double breadth;
 
-  Rectangle({required this.bredth, required this.length});
+  Rectangle({required this.breadth, required this.length});
   @override
   double calculateArea(){
-    return length*bredth;
+    return length*breadth;
   }
 
   @override
   double calculatePerimeter(){
-    return 2*(length+bredth);
+    return 2*(length+breadth);
   }
   
   @override
   bool isLargerThan(Shape other) {
-    return calculateArea()> other.calculatePerimeter();
+    return calculateArea()> other.calculateArea();
 
   }
   
   @override
   void printShape() {
-    // TODO: implement printShape
 
     print("Area of rectangle:${calculateArea()}");
     print("Perimeter: ${calculatePerimeter()}");
@@ -89,14 +88,10 @@ class Rectangle implements Shape{
 }
 
 void main(){
-  Rectangle re = Rectangle(bredth: 20, length: 12);
-  re.calculateArea() ;
-  print(re.calculateArea);
+  Rectangle re = Rectangle(breadth: 20, length: 12);
+  double area = re.calculateArea();
+  print(area);
+  
 }
 
 
-void main(){
-  Rectangle re = Rectangle(bredth: 20, length: 12);
-  re.calculateArea() ;
-  print(re.calculateArea);
-}
