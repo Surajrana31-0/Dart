@@ -1,60 +1,89 @@
-// class Faculty{
-//   String name;
-//   int age;
-//   String address;
+class Faculty{
+  final String name;
+  final int age;
+  final String address;
 
 
-//   Faculty(this.name, this.age, this.address);
-//   void displayDetails(){
-//       return "Name:$name, Age:$age, Adderss:$address";
-//   }
-// }
+  Faculty(this.name, this.age, this.address);
+  void displayDetails(){
+      print("Name:$name, Age:$age, Address:$address");
+  }
 
-// class FullTimeFaculty extends Faculty{
-//   double monthlySalary;
+  double calculateYearlySalary(){
+    return 0;
+  }
+}
 
-//   FullTimeFaculty(super.name,super.age, this.monthlySalary);
-//   double calculateFultimeSalary(){
-//     return monthlySalary*12;
+class FullTimeFaculty extends Faculty{
+  double monthlySalary;
 
-  
-//   }
+  FullTimeFaculty(super.name, super.age, super.address, this.monthlySalary);
 
-//   // @override
-//   // String toString(){
-//   //   return "monthalySalary: ${monthlySalary*12}";
-//   // }
-
-// }
-
-
-
-
-// class PartTimeFaculty extends Faculty{
-//   double hourlySalary;
-//   int hourPerWeek;
-//   PartTimeFaculty(super.name, super.age, this.hourlySalary, this. hourPerWeek);
-
-//   double calculatePartTimeSalary(){
-//   return "WeeklySalary: ${hourlySalary*hourPerWeek}";
-//   }
-
-//   double calculateYearlyTimeSalary(){
-//     return calculateYearlyTimeSalary()*52;
-//   }
-// }
-
-//   // @override
-//   // String toString(){
-//   //   return "WeeklySalary: ${hourlySalary*hourPerWeek}";
-//   // }
-
-
-// void main(List<String>args){
-//   Faculty dis = Faculty("Suraj", 25, "Kathmandu");
-//   print(dis);
-//   dis.displayDetails(); 
-
+  @override
+  double calculateYearlySalary(){
+    return monthlySalary*12;
 
   
-// }
+  }
+
+  @override
+  String toString(){
+    return "monthalySalary: ${calculateYearlySalary()}";
+  }
+
+}
+
+
+
+
+class PartTimeFaculty extends Faculty{
+  double hourlySalary;
+  int hourPerWeek;
+  PartTimeFaculty(super.name, super.age, super.address, this.hourlySalary, this.hourPerWeek); //or this. name so need to:super(name,age);
+
+
+  double weeklySalary(){
+  return hourlySalary*hourPerWeek;
+  }
+
+
+  @override
+  double calculateYearlySalary(){
+    return weeklySalary()*52;
+  }
+
+
+  @override
+  String toString(){
+    return "monthalySalary: ${calculateYearlySalary()}";
+  }
+
+}
+
+
+void main(List<String>args){
+  Faculty dis = Faculty("Suraj", 25, "Kathmandu");
+  print(dis);
+  dis.displayDetails(); 
+
+
+
+
+  FullTimeFaculty fulltime = FullTimeFaculty("Suraj", 22, "Kathmandu", 2500);
+  PartTimeFaculty parttime = PartTimeFaculty("Priya", 25,"Pokhara",  2000, 24);
+
+  print(fulltime);
+  print(parttime);
+
+
+  print("");
+  print("Yearly Salary Full time: ${fulltime.calculateYearlySalary()}");
+  print("Yearly salary part time: ${parttime.calculateYearlySalary()}");
+  print("Monthly Salary part time: ${parttime.weeklySalary()}");
+  
+
+
+
+
+  
+}
