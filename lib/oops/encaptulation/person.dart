@@ -90,10 +90,13 @@ void main(){
   Person p4 = Person(name: "suraj", age: 25, status: true);
   print(p4);
 
-  p4.name = "Rohit";
+  p4.name = "Rajib";
   p4.age = 30;
   p4.status = false;
-  print(p4);  //this Shows updated values via getters because we modify
+  print(p4);  //this Shows updated values via getters because we 
+  
+
+
 
 
   
